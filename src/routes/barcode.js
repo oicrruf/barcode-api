@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const generateBarcode = require("../util/barcode");
 
 router.get("/:code", function (req, res, next) {
-  const code = req.params.code;
-  res.send({ code });
+  generateBarcode(res, req.query.format, req.params.code);
 });
 
 module.exports = router;
