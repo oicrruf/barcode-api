@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const app = express();
 const health = require("./src/routes/health.route");
-const barcodeRouter = require("./src/routes/barcode.route");
+const barcodeRouter = require("./src/routes/barcode/barcode.route");
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -24,7 +24,7 @@ app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
   res.status(err.status || 500);
-  res.send(JSON.stringify(err));
+  res.send({message: err});
 });
 
 module.exports = app;

@@ -4,7 +4,7 @@ const Barcode = require("jsbarcode");
 const generateBarcode = (res, format = "CODE39", code) => {
   const canvas = createCanvas();
   Barcode(canvas, code, {
-    format: format,
+    format: format.toUpperCase(),
     displayValue: true,
     fontSize: 15,
     textMargin: 10,
