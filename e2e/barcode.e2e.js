@@ -31,6 +31,13 @@ describe("check barcode route", () => {
     expect(response.statusCode).toEqual(404)
   });
 
+  test("GET /barcode with invalid characters", async () => {
+    const response = await api.get("/barcode/00000000*");
+    expect(response.statusCode).toEqual(500)
+    expect(response.body.message).toMatch(/is not a valid input/)
+  });
+
+  // DTO testing
   test("GET /barcode code not must be at most 16 characters", async () => {
     const response = await api.get("/barcode/00000000000000000");
     expect(response.statusCode).toEqual(500)
@@ -41,11 +48,7 @@ describe("check barcode route", () => {
     expect(response.statusCode).toEqual(500)
   });
 
-  test("GET /barcode with invalid characters", async () => {
-    const response = await api.get("/barcode/00000000*");
-    expect(response.statusCode).toEqual(500)
-    expect(response.body.message).toMatch(/is not a valid input/)
-  });
+ 
 
   afterEach(() => server.close());
 });

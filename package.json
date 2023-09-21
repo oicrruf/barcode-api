@@ -9,6 +9,7 @@
     "e2e:coverage": "jest --config ./jest-e2e.json --verbose --detectOpenHandles --coverage"
   },
   "dependencies": {
+    "@prisma/client": "^5.3.1",
     "canvas": "^2.11.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -20,6 +21,7 @@
     "jsbarcode": "^3.11.5",
     "morgan": "~1.9.1",
     "nodemon": "^3.0.1",
+    "prisma": "^5.3.1",
     "yup": "^1.2.0"
   },
   "devDependencies": {
