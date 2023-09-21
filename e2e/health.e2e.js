@@ -2,12 +2,12 @@ const request = require("supertest");
 
 const app = require("../app");
 
-describe("check health route", () => {
+describe("health route", () => {
   let server = null;
   let api = null;
 
   beforeEach(() => {
-    server = app.listen(3000);
+    server = app.listen(8000);
     api = request(app);
   });
 
