@@ -4,11 +4,10 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 require("dotenv").config();
 
-const health = require("./src/routes/index");
-const barcodeRouter = require("./src/routes/barcode");
-
-
 const app = express();
+const health = require("./src/routes/health.route");
+const barcodeRouter = require("./src/routes/barcode.route");
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
