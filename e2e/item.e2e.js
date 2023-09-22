@@ -1,6 +1,6 @@
-const request = require("supertest");
-
+require('../config')
 const app = require("../app");
+const request = require("supertest");
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
@@ -9,7 +9,7 @@ describe("item route", () => {
   let api = null;
 
   beforeEach(() => {
-    server = app.listen(8000);
+    server = app.listen(process.env.PORT);
     api = request(app);
   });
 

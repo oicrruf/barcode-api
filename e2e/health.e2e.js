@@ -1,5 +1,5 @@
+require('../config')
 const request = require("supertest");
-
 const app = require("../app");
 
 describe("health route", () => {
@@ -7,7 +7,7 @@ describe("health route", () => {
   let api = null;
 
   beforeEach(() => {
-    server = app.listen(8000);
+    server = app.listen(process.env.PORT);
     api = request(app);
   });
 

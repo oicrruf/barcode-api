@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  postgres-e2e:
+    image: postgres:15.1
+    environment:
+      - POSTGRES_DB=${POSTGRES_DATABASE}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "8032:5432"
+    volumes:
+      - ./.docker:/var/lib/postgresql
+
