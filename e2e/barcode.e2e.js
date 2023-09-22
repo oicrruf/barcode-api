@@ -31,12 +31,6 @@ describe("barcode route", () => {
     expect(response.statusCode).toEqual(404)
   });
 
-  test("GET /api/v1/barcode with invalid characters", async () => {
-    const response = await api.get("/api/v1/barcode/00000000*");
-    expect(response.statusCode).toEqual(500)
-    expect(response.body.message).toMatch(/is not a valid input/)
-  });
-
   // DTO testing
   test("GET /api/v1/barcode code not must be at most 16 characters", async () => {
     const response = await api.get("/api/v1/barcode/00000000000000000");

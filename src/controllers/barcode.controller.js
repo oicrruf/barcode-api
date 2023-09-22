@@ -2,7 +2,7 @@ const { createCanvas } = require("canvas");
 const Barcode = require("jsbarcode");
 
 const generateBarcode = (req, res, next) => {
-  let format = !req.query.format && "CODE39";
+  let format = !req.query.format && "CODE128";
   const canvas = createCanvas();
   Barcode(canvas, req.params.code, {
     format: format.toUpperCase(),
@@ -15,4 +15,4 @@ const generateBarcode = (req, res, next) => {
   stream.pipe(res);
 };
 
-module.exports = {generateBarcode}
+module.exports = { generateBarcode };

@@ -6,4 +6,13 @@ const getItems = async (req, res, next) => {
   return res.status(200).json(items);
 };
 
-module.exports = { getItems };
+const getItem = async (req, res, next) => {
+  const item = await prisma.item.findUnique({
+    where: {
+      id: parseInt(req.params.id),
+    },
+  });
+  return res.status(200).json(item);
+};
+
+module.exports = { getItems, getItem };
