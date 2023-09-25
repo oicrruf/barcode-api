@@ -1,19 +1,20 @@
+const config = require("./config");
 const createError = require("http-errors");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const router = require("./src/routes");
-const config = require("./config");
 
 config;
 const app = express();
 
-router(app);
 
-app.use(logger("dev"));
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+router(app);
 
 app.use((req, res, next) => {
   next(createError(404));

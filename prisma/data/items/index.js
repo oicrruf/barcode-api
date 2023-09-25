@@ -7,7 +7,6 @@ const items = async () => {
     where: { id: 1 },
     update: {},
     create: {
-      id: 1,
       code: "0000000000IP1291",
       name: "iPad Pro 12.9",
       detail: "MNXP3LL/A",
@@ -18,7 +17,6 @@ const items = async () => {
     where: { id: 2 },
     update: {},
     create: {
-      id: 2,
       code: "00000000000IP152",
       name: "iPhone 14 Pro",
       detail: "MQ023BE/A",
@@ -29,7 +27,6 @@ const items = async () => {
     where: { id: 3 },
     update: {},
     create: {
-      id: 3,
       code: "00000000000AWSE3",
       name: "Apple Watch SE 8",
       detail: "A2723",
@@ -40,7 +37,6 @@ const items = async () => {
     where: { id: 4 },
     update: {},
     create: {
-      id: 4,
       code: "000000000000HPM4",
       name: "Home Pod Mini",
       detail: "MY5G2LL/A",
@@ -51,7 +47,6 @@ const items = async () => {
     where: { id: 5 },
     update: {},
     create: {
-      id: 5,
       code: "00000000000IP129",
       name: "Apple TV",
       detail: "MN873LL/A",
