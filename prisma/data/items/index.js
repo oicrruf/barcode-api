@@ -1,4 +1,3 @@
-
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
@@ -7,50 +6,54 @@ const items = async () => {
     where: { id: 1 },
     update: {},
     create: {
-      code: "0000000000IP1291",
-      name: "iPad Pro 12.9",
-      detail: "MNXP3LL/A",
-      price: 1149.0,
+      code: "0000VLT820230899",
+      name: "visualise loudly tell",
+      detail:
+        "summopere thesaurus synagoga pel arcus capto eius aut succedo coniuratio colo combibo",
+      price: 496.61,
     },
   });
   await prisma.item.upsert({
     where: { id: 2 },
     update: {},
     create: {
-      code: "00000000000IP152",
-      name: "iPhone 14 Pro",
-      detail: "MQ023BE/A",
-      price: 1310.0,
+      code: "0000BVU820230807",
+      name: "bossy vaguely unethically",
+      detail:
+        "aestivus voluptates supellex doloribus catena surculus sperno volva vomer tempora",
+      price: 941.17,
     },
   });
   await prisma.item.upsert({
     where: { id: 3 },
     update: {},
     create: {
-      code: "00000000000AWSE3",
-      name: "Apple Watch SE 8",
-      detail: "A2723",
-      price: 219.99,
+      code: "0000NFT820230679",
+      name: "natural from tasty",
+      detail:
+        "qui velum facilis tabesco comptus saepe succurro deludo ascit alias delectatio",
+      price: 785.12,
     },
   });
   await prisma.item.upsert({
     where: { id: 4 },
     update: {},
     create: {
-      code: "000000000000HPM4",
-      name: "Home Pod Mini",
-      detail: "MY5G2LL/A",
-      price: 94.99,
+      code: "0000HCF820230654",
+      name: "ha cautiously furthermore",
+      detail:
+        "cibo quisquam callide temptatio volutabrum allatus explicabo trucido utrum",
+      price: 847.87,
     },
   });
   await prisma.item.upsert({
     where: { id: 5 },
     update: {},
     create: {
-      code: "00000000000IP129",
-      name: "Apple TV",
-      detail: "MN873LL/A",
-      price: 124.99,
+      code: "0000BSP820230575",
+      name: "by since pace",
+      detail: "confido pectus careo capitulus laboriosam vito adulatio",
+      price: 52.09,
     },
   });
 };

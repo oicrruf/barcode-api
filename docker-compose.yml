@@ -10,5 +10,5 @@ services:
     ports:
       - "8032:5432"
     volumes:
-      - ./.docker:/var/lib/postgresql
+      - ./e2e:/var/lib/postgresql
 

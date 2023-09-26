@@ -1,5 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
+const { generateCode } = require("../util");
 
 const getAllItems = async (req, res, next) => {
   const items = await prisma.item.findMany();
@@ -27,7 +28,7 @@ const editItem = async (req, res, next) => {
 
 const createItem = async (req, res, next) => {
   const item = await prisma.item.create({
-    data: req.body,
+    data: { ...req.body, code: generateCode(req.body.name) },
   });
   return res.status(201).json(item);
 };
