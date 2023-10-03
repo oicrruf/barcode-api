@@ -4,3 +4,4 @@ node_modules
 coverage
 postgres_data
 .docker
+dist

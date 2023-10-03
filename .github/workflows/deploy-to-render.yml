@@ -1,0 +1,42 @@
+name: Deploy to Render.com
+
+on:
+  push:
+    branches:
+      - main # Change to your main branch name if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14 # You can change this to your desired Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the app (if needed)
+        run: npm run build
+
+      - name: Deploy to Render.com
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }} # Add your Render.com API key as a secret in your GitHub repository
+        run: |
+          curl -X POST https://api.render.com/v1/deploys \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            --data '{
+              "name": "Your-Render-Service-Name", # Replace with your Render service name
+              "branch": "main", # Change to your main branch name if different
+              "buildCommand": "npm start", # Change to your start command
+              "directory": ".", # Change to your app's root directory if necessary
+              "environment": {
+                "NODE_ENV": "production" # Set any environment variables required by your app
+              }
+            }'

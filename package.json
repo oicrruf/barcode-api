@@ -11,7 +11,9 @@
     "e2e:seed": "dotenv -e .env.e2e -- npx prisma db seed deploy",
     "docker:up": "docker-compose up -d ",
     "docker:down": "docker-compose down && rm -rf ./e2e/data",
-    "e2e:start": "npm run docker:up && npm run e2e:migrations && npm run e2e:seed && npm run e2e"
+    "e2e:start": "npm run docker:up && npm run e2e:migrations && npm run e2e:seed && npm run e2e", 
+    "build": "webpack", 
+    "start:prod": "node dist/app.js"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
@@ -35,6 +37,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.1.0",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
