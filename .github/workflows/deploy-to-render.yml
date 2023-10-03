@@ -32,11 +32,11 @@ jobs:
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $RENDER_API_KEY" \
             --data '{
-              "name": "Your-Render-Service-Name", # Replace with your Render service name
-              "branch": "main", # Change to your main branch name if different
-              "buildCommand": "npm start", # Change to your start command
-              "directory": ".", # Change to your app's root directory if necessary
+              "name": "barcode-api",
+              "branch": "main",
+              "buildCommand": "npm start", 
+              "directory": ".", 
               "environment": {
-                "NODE_ENV": "production" # Set any environment variables required by your app
+                "NODE_ENV": "production"
               }
             }'
