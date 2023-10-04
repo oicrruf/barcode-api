@@ -1,23 +1,12 @@
 # Use an official Node.js runtime as a parent image
-FROM node:18-alpine3.16
-
-WORKDIR /app
-
-# RUN apk add --update --no-cache \
-#   make \
-#   g++ \
-#   build-base \
-#   cairo-dev \
-#   jpeg-dev \
-#   pango-dev \
-#   giflib-dev \
-#   imagemagick \
-#   libtool \
-#   autoconf \
-#   automake
+FROM node:18-alpine3.18 
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
+
+ENV PORT=$PORT  
+ENV DATABASE_URL=$DATABAE_URL
+ENV NODE_ENV=$NODE_ENV
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
