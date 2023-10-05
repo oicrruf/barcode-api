@@ -13,7 +13,8 @@
     "docker:down": "docker-compose down && rm -rf ./e2e/data",
     "e2e:start": "npm run docker:up && npm run e2e:migrations && npm run e2e:seed && npm run e2e",
     "build": "webpack",
-    "start:prod": "node dist/app.js"
+    "start:prod": "node dist/app.js",
+    "build:image": "docker build -t oicrruf/barcode:latest . --platform linux/amd64"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
